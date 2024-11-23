@@ -18,11 +18,11 @@
                     <Button HorizontalAlignment="Left" Content="Регистрация" Background="#CD0074" FontFamily="Bahnschrift SemiBold Condensed"/>
                     <Button HorizontalAlignment="Right" Content="Вход" Background="#9FEE00" FontFamily="Bahnschrift SemiBold Condensed"/>
                 </Grid>
-                <TextBox materialDesign:HintAssist.Hint="Введите ФИО" FontFamily="Bahnschrift Condensed" FontSize="14" BorderBrush="White" Foreground="Black" SelectionTextBrush="Black" Background="#FFD0D0D0" />
-                <PasswordBox materialDesign:HintAssist.Hint="Введите пароль" FontFamily="Bahnschrift Condensed" FontSize="14" BorderBrush="White" Foreground="Black" SelectionTextBrush="Black" Background="#FFD0D0D0"  />
-                <PasswordBox materialDesign:HintAssist.Hint="Повторите пароль" FontFamily="Bahnschrift Condensed" FontSize="14" BorderBrush="White" Foreground="Black" SelectionTextBrush="Black" Background="#FFD0D0D0" />
-                <TextBox materialDesign:HintAssist.Hint="Введите полис" FontFamily="Bahnschrift Condensed" FontSize="14" BorderBrush="White" Foreground="Black" SelectionTextBrush="Black" Background="#FFD0D0D0" />
-                <Button Content="Зарегестрироваться" Margin="0 20"/>
+                <TextBox x:Name="TextBoxLogin" materialDesign:HintAssist.Hint="Введите ФИО" FontFamily="Bahnschrift Condensed" FontSize="14" BorderBrush="White" Foreground="Black" SelectionTextBrush="Black" Background="#FFD0D0D0" />
+                <PasswordBox x:Name="PassBox" materialDesign:HintAssist.Hint="Введите пароль" FontFamily="Bahnschrift Condensed" FontSize="14" BorderBrush="White" Foreground="Black" SelectionTextBrush="Black" Background="#FFD0D0D0"  />
+                <PasswordBox x:Name="PassBox_2" materialDesign:HintAssist.Hint="Повторите пароль" FontFamily="Bahnschrift Condensed" FontSize="14" BorderBrush="White" Foreground="Black" SelectionTextBrush="Black" Background="#FFD0D0D0" />
+                <TextBox x:Name="TextBoxPolic" materialDesign:HintAssist.Hint="Введите полис" FontFamily="Bahnschrift Condensed" FontSize="14" BorderBrush="White" Foreground="Black" SelectionTextBrush="Black" Background="#FFD0D0D0" />
+                <Button Content="Зарегестрироваться" Margin="0 20" Click="Button_Reg_Click"/>
             </StackPanel>
         </Border>
     </Grid>
