@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="Запись к врачу" Height="600" Width="1000" FontFamily="AniMe Matrix - MB_EN">
+        Title="Запись к врачу" Height="600" Width="800" FontFamily="AniMe Matrix - MB_EN">
     <Grid Background="#ffdadada">
         <Border MinWidth="400" Margin="15" Background="White" VerticalAlignment="Center" Padding="30" MaxWidth="550" CornerRadius="20">
             <Border.Effect>
@@ -15,9 +15,14 @@
             <StackPanel>
                 <TextBlock Text="Доброго времени суток!" FontSize="30" FontWeight="Bold" Margin="0 0 0 20"/>
                 <Grid Margin="0 0 0 20">
-                    <Button HorizontalAlignment="Left" Content="Регистрация"/>
-                    <Button HorizontalAlignment="Right" Content="Вход" Style="{StaticResource MaterialDesignFlatButton}"/>
+                    <Button HorizontalAlignment="Left" Content="Регистрация" Background="#CD0074" FontFamily="Bahnschrift SemiBold Condensed"/>
+                    <Button HorizontalAlignment="Right" Content="Вход" Background="#9FEE00" FontFamily="Bahnschrift SemiBold Condensed"/>
                 </Grid>
+                <TextBox materialDesign:HintAssist.Hint="Введите логин" FontFamily="Bahnschrift Condensed" FontSize="14" BorderBrush="White" Foreground="Black" SelectionTextBrush="Black" Background="#FFD0D0D0" Text="Введите логин" />
+                <PasswordBox materialDesign:HintAssist.Hint="Введите пароль" FontFamily="Bahnschrift Condensed" FontSize="14" BorderBrush="White" Foreground="Black" SelectionTextBrush="Black" Background="#FFD0D0D0"  />
+                <PasswordBox materialDesign:HintAssist.Hint="Повторите пароль" FontFamily="Bahnschrift Condensed" FontSize="14" BorderBrush="White" Foreground="Black" SelectionTextBrush="Black" Background="#FFD0D0D0" />
+                <TextBox materialDesign:HintAssist.Hint="Введите полис" FontFamily="Bahnschrift Condensed" FontSize="14" BorderBrush="White" Foreground="Black" SelectionTextBrush="Black" Background="#FFD0D0D0" Text="Введите полис" />
+                <Button Content="Зарегестрироваться" Margin="0 20"/>
             </StackPanel>
         </Border>
     </Grid>
