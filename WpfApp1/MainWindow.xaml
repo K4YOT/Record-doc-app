@@ -18,10 +18,10 @@
                     <Button HorizontalAlignment="Left" Content="Регистрация" Background="#CD0074" FontFamily="Bahnschrift SemiBold Condensed"/>
                     <Button HorizontalAlignment="Right" Content="Вход" Background="#9FEE00" FontFamily="Bahnschrift SemiBold Condensed"/>
                 </Grid>
-                <TextBox materialDesign:HintAssist.Hint="Введите логин" FontFamily="Bahnschrift Condensed" FontSize="14" BorderBrush="White" Foreground="Black" SelectionTextBrush="Black" Background="#FFD0D0D0" Text="Введите логин" />
+                <TextBox materialDesign:HintAssist.Hint="Введите ФИО" FontFamily="Bahnschrift Condensed" FontSize="14" BorderBrush="White" Foreground="Black" SelectionTextBrush="Black" Background="#FFD0D0D0" />
                 <PasswordBox materialDesign:HintAssist.Hint="Введите пароль" FontFamily="Bahnschrift Condensed" FontSize="14" BorderBrush="White" Foreground="Black" SelectionTextBrush="Black" Background="#FFD0D0D0"  />
                 <PasswordBox materialDesign:HintAssist.Hint="Повторите пароль" FontFamily="Bahnschrift Condensed" FontSize="14" BorderBrush="White" Foreground="Black" SelectionTextBrush="Black" Background="#FFD0D0D0" />
-                <TextBox materialDesign:HintAssist.Hint="Введите полис" FontFamily="Bahnschrift Condensed" FontSize="14" BorderBrush="White" Foreground="Black" SelectionTextBrush="Black" Background="#FFD0D0D0" Text="Введите полис" />
+                <TextBox materialDesign:HintAssist.Hint="Введите полис" FontFamily="Bahnschrift Condensed" FontSize="14" BorderBrush="White" Foreground="Black" SelectionTextBrush="Black" Background="#FFD0D0D0" />
                 <Button Content="Зарегестрироваться" Margin="0 20"/>
             </StackPanel>
         </Border>
