@@ -16,10 +16,11 @@ namespace WpfApp1
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    DataBase dataBase = new DataBase();
 
     public partial class MainWindow : Window
     {
+        DataBase dataBase = new DataBase();
+
         public MainWindow()
         {
             InitializeComponent();
