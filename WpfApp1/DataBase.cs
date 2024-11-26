@@ -9,7 +9,7 @@ namespace WpfApp1
 {
     class DataBase
     {
-        SqlConnection SqlConnection = new SqlConnection(@"Data Source=DESKTOP-CC1PTDV\SQLEXPRESS;Initial Catalog=Record_doc;Integrated Security=True;Encrypt=False;Trust Server Certificate=True");
+        SqlConnection SqlConnection = new SqlConnection(@"Data Source=DESKTOP-CC1PTDV\SQLEXPRESS;Initial Catalog=Record_doc;Integrated Security=True;Encrypt=False;TrustServerCertificate=True");
 
         public void openConnection()
         {

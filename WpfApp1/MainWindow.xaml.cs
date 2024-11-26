@@ -1,4 +1,6 @@
-﻿using System.Security.Authentication.ExtendedProtection;
+﻿using System.Data;
+using System.Data.SqlClient;
+using System.Security.Authentication.ExtendedProtection;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -64,6 +66,16 @@ namespace WpfApp1
                 PassBox_2.Background = Brushes.Transparent;
                 TextBoxPolic.ToolTip = "";
                 TextBoxPolic.Background = Brushes.Transparent;
+
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                DataTable table = new DataTable();
+
+                string qwerystring = $"select ID, Full_name, Password, Num_police from Pacient where Full_name = '{login}' and Password = '{pass}' and Num_police = '{polic}'";
+
+                SqlCommand command = new SqlCommand(qwerystring, dataBase.GetConnection());
+
+                adapter.SelectCommand = command;
+                adapter.Fill(table);
 
                 MessageBox.Show("Всё хорошо!");
             }
