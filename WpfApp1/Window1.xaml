@@ -1,0 +1,26 @@
+﻿<Window x:Class="WpfApp1.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:WpfApp1"
+    mc:Ignorable="d"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    Title="Запись к врачу" Height="600" Width="800" FontFamily="AniMe Matrix - MB_EN">
+    <Grid Background="#ffdadada">
+        <Border MinWidth="400" Margin="15" Background="White" VerticalAlignment="Center" Padding="30" MaxWidth="550" CornerRadius="20">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock Text="Доброго времени суток!" FontSize="30" FontWeight="Bold" Margin="0 0 0 20"/>
+                <Grid Margin="0 0 0 20">
+                    <Button HorizontalAlignment="Center" Content="Регистрация" Click="Button_Window_reg_Click" Background="#CD0074" FontFamily="Bahnschrift SemiBold Condensed"/>
+                </Grid>
+                <TextBox x:Name="TextBoxPolic2" materialDesign:HintAssist.Hint="Введите полис" FontFamily="Bahnschrift Condensed" FontSize="14" BorderBrush="White" Foreground="Black" SelectionTextBrush="Black" Background="#FFD0D0D0" />
+                <PasswordBox x:Name="PassBox2" materialDesign:HintAssist.Hint="Введите пароль" FontFamily="Bahnschrift Condensed" FontSize="14" BorderBrush="White" Foreground="Black" SelectionTextBrush="Black" Background="#FFD0D0D0"  />
+                <Button Content="Войти" Margin="0 20" Click="Button_Vhod_Click"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

@@ -12,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using static MaterialDesignThemes.Wpf.Theme;
+using System.Windows.Forms;
 
 namespace WpfApp1
 {
@@ -30,10 +31,10 @@ namespace WpfApp1
 
         private void Button_Reg_Click(object sender, RoutedEventArgs e)
         {
-            string login = TextBoxLogin.Text.Trim();
-            string pass = PassBox.Password.Trim();
-            string pass_2 = PassBox_2.Password.Trim();
-            string polic = TextBoxPolic.Text.Trim();
+            var login = TextBoxLogin.Text.Trim();
+            var pass = PassBox.Password.Trim();
+            var pass_2 = PassBox_2.Password.Trim();
+            var polic = TextBoxPolic.Text.Trim();
             int i;
 
             if (login.Length < 8)
@@ -67,18 +68,56 @@ namespace WpfApp1
                 TextBoxPolic.ToolTip = "";
                 TextBoxPolic.Background = Brushes.Transparent;
 
-                SqlDataAdapter adapter = new SqlDataAdapter();
-                DataTable table = new DataTable();
-
-                string qwerystring = $"select ID, Full_name, Password, Num_police from Pacient where Full_name = '{login}' and Password = '{pass}' and Num_police = '{polic}'";
-
-                SqlCommand command = new SqlCommand(qwerystring, dataBase.GetConnection());
-
-                adapter.SelectCommand = command;
-                adapter.Fill(table);
-
-                MessageBox.Show("Всё хорошо!");
+                
             }
+
+
+            string qwerystring = $"insert into Pacient(Full_name, Num_police, Login, Password) values('{login}', '{polic}', '{login}', '{pass}')";
+
+            SqlCommand command = new SqlCommand(qwerystring, dataBase.GetConnection());
+
+            dataBase.openConnection();
+
+            if (command.ExecuteNonQuery() == 1)
+            {
+                System.Windows.MessageBox.Show("Аккаунт успешно создан!", "Успех!");
+            }
+            else
+            {
+                System.Windows.MessageBox.Show("Аккаунт не удалось зарегестрировать!", "Ошибка!");
+            }
+            dataBase.closeConnection();
+        }
+
+    private Boolean checkuser()
+        {
+            var polic = TextBoxPolic;
+            var pass = PassBox;
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            DataTable table = new DataTable();
+            string qwerysting = $"select ID, Full_name, Num_police, Login, Password where Num_police = '{polic}', Password = '{pass}'";
+
+            SqlCommand command = new SqlCommand(qwerysting, dataBase.GetConnection());
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            if(table.Rows.Count > 0)
+            {
+                System.Windows.MessageBox.Show("Пользователь уже существует!");
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        private void Button_Window_Auth_Click(object sender, RoutedEventArgs e)
+        {
+            Window1 authwin = new Window1();
+            authwin.Show();
+            Close();
         }
     }
 }

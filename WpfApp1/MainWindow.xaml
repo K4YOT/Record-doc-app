@@ -15,8 +15,7 @@
             <StackPanel>
                 <TextBlock Text="Доброго времени суток!" FontSize="30" FontWeight="Bold" Margin="0 0 0 20"/>
                 <Grid Margin="0 0 0 20">
-                    <Button HorizontalAlignment="Left" Content="Регистрация" Background="#CD0074" FontFamily="Bahnschrift SemiBold Condensed"/>
-                    <Button HorizontalAlignment="Right" Content="Вход" Background="#9FEE00" FontFamily="Bahnschrift SemiBold Condensed"/>
+                    <Button HorizontalAlignment="Center" Content="Вход" Click="Button_Window_Auth_Click" Background="#9FEE00" FontFamily="Bahnschrift SemiBold Condensed"/>
                 </Grid>
                 <TextBox x:Name="TextBoxLogin" materialDesign:HintAssist.Hint="Введите ФИО" FontFamily="Bahnschrift Condensed" FontSize="14" BorderBrush="White" Foreground="Black" SelectionTextBrush="Black" Background="#FFD0D0D0" />
                 <PasswordBox x:Name="PassBox" materialDesign:HintAssist.Hint="Введите пароль" FontFamily="Bahnschrift Condensed" FontSize="14" BorderBrush="White" Foreground="Black" SelectionTextBrush="Black" Background="#FFD0D0D0"  />
