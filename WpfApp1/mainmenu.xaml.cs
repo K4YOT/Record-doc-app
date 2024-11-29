@@ -23,5 +23,13 @@ namespace WpfApp1
         {
             InitializeComponent();
         }
+        private void Button_Reg_Click1(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+        private void Button_Reg_Click2(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
