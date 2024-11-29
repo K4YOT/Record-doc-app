@@ -52,10 +52,18 @@ namespace WpfApp1
             if(table.Rows.Count == 1)
             {
                 System.Windows.MessageBox.Show("Вы успешно вошли!", "Успешно!", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                mainmenu menu = new mainmenu();
+                menu.Show();
+                Close();
             }
             else
             {
                 System.Windows.MessageBox.Show("Такого аккаунта не существет!", "Аккаунта не существует!", MessageBoxButton.OK, MessageBoxImage.Warning);
+
+                    mainmenu menu = new mainmenu();
+                    menu.Show();
+                    Close();
             }
         }
     }

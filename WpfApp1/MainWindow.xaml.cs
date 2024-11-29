@@ -89,28 +89,39 @@ namespace WpfApp1
             dataBase.closeConnection();
         }
 
-    private Boolean checkuser()
+        private Boolean CheckUser()
         {
-            var polic = TextBoxPolic;
-            var pass = PassBox;
+            var polic = TextBoxPolic.Text; 
+            var pass = PassBox.Password; 
 
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            DataTable table = new DataTable();
-            string qwerysting = $"select ID, Full_name, Num_police, Login, Password where Num_police = '{polic}', Password = '{pass}'";
-
-            SqlCommand command = new SqlCommand(qwerysting, dataBase.GetConnection());
-
-            adapter.SelectCommand = command;
-            adapter.Fill(table);
-
-            if(table.Rows.Count > 0)
+            using (SqlConnection connection = dataBase.GetConnection())
             {
-                System.Windows.MessageBox.Show("Пользователь уже существует!");
-                return true;
-            }
-            else
-            {
-                return false;
+                // Open the connection
+                connection.Open();
+
+                // Using parameterized query to prevent SQL injection
+                string query = $"select ID, Full_name, Num_police, Login, Password from Pacient where Num_police = '{polic}' and Password = '{pass}'";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    // Adding parameters
+                    command.Parameters.AddWithValue("Num_police", polic);
+                    command.Parameters.AddWithValue("Password", pass);
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
+
+                    if (table.Rows.Count > 0)
+                    {
+                        System.Windows.MessageBox.Show("Пользователь уже существует!");
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
             }
         }
         private void Button_Window_Auth_Click(object sender, RoutedEventArgs e)
